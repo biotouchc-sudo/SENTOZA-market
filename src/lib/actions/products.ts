@@ -158,7 +158,7 @@ export async function toggleAvailability(productId: string): Promise<ActionRespo
 export async function getProducts() {
   try {
     return await db.query.products.findMany({
-      orderBy: (products, { desc }) => [desc(products.created_at)],
+      orderBy: (products, { desc }) => [desc(products.createdAt)],
     });
   } catch (error) {
     console.error("Get Products Error:", error);
