@@ -26,6 +26,7 @@ interface InventoryState {
   updateProduct: (id: string, updates: Partial<Product>) => void;
   deleteProduct: (id: string) => void;
   resetDefaults: () => void;
+  setProducts: (products: Product[]) => void;
 }
 
 const DEFAULT_PRODUCTS: Product[] = [
@@ -103,6 +104,7 @@ export const useInventory = create<InventoryState>()(
   persist(
     (set, get) => ({
       products: DEFAULT_PRODUCTS,
+      setProducts: (products) => set({ products }),
 
       addProduct: (product) => {
         const newProduct = { ...product, id: Math.random().toString(36).substr(2, 9) };
@@ -119,11 +121,20 @@ export const useInventory = create<InventoryState>()(
         set({ products: get().products.filter((p) => p.id !== id) });
       },
 
+
+
       resetDefaults: () => set({ products: DEFAULT_PRODUCTS }),
     }),
     {
       name: "nexus-inventory-storage",
-      storage: createJSONStorage(() => (typeof window !== "undefined" ? localStorage : undefined)),
+      storage: createJSONStorage(() => {
+        if (typeof window !== "undefined") return localStorage;
+        return {
+          getItem: () => null,
+          setItem: () => {},
+          removeItem: () => {},
+        };
+      }),
     }
   )
 );

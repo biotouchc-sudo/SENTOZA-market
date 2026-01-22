@@ -79,7 +79,14 @@ export const useCart = create<CartState>()(
     }),
     {
       name: "nexus-cart-storage",
-      storage: createJSONStorage(() => (typeof window !== "undefined" ? localStorage : undefined)),
+      storage: createJSONStorage(() => {
+        if (typeof window !== "undefined") return localStorage;
+        return {
+          getItem: () => null,
+          setItem: () => {},
+          removeItem: () => {},
+        };
+      }),
     }
   )
 );

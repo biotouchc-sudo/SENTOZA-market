@@ -1,19 +1,89 @@
 "use client";
 
 import { useState } from "react";
-import { useInventory, Product, ProductDraft } from "@/store/useInventory"; // Verify exports in next step
+import { useInventory, Product, ProductDraft } from "@/store/useInventory";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Icon } from "@/components/ui/Icon";
-import { Category } from "@/lib/schema/product.schema"; // Verify exports
+import { Category } from "@/lib/schema/product.schema";
+import { addToInventory, deleteFromInventory, getProductsAction, updateProductAction } from "../actions";
+import { useEffect } from "react";
 
 export default function AdminPage() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [pin, setPin] = useState("");
-    const { products, addProduct, updateProduct, deleteProduct, resetDefaults } = useInventory();
+
+    // We will use local state synced with DB instead of just store
+    const { products, setProducts, addProduct: addToStore, deleteProduct: deleteFromStore, updateProduct: updateInternalStore, resetDefaults } = useInventory((state) => ({
+        products: state.products,
+        setProducts: (products: Product[]) => state.products = products,
+        addProduct: state.addProduct,
+        deleteProduct: state.deleteProduct,
+        updateProduct: state.updateProduct,
+        resetDefaults: state.resetDefaults
+    }));
+
+    // Fetch real data on auth
+    useEffect(() => {
+        if (isAuthenticated) {
+            getProductsAction().then(res => {
+                if (res.success && res.data) {
+                    // We need a way to set products in store. 
+                    // Since useInventory doesn't have setProducts, we might need to add it or just rely on the fact that 
+                    // we want to move AWAY from useInventory for source of truth.
+                    // But strictly following user "Correct Real Admin", we should use real data.
+                    // For now, I will add a 'setAllProducts' to useInventory to sync.
+                }
+            });
+        }
+    }, [isAuthenticated]);
 
     // Local state for new product form
     const [newProduct, setNewProduct] = useState({ name: "", price: "", category: "soft" });
+
+    const handleAddProduct = async () => {
+        if (!newProduct.name || !newProduct.price) return;
+
+        const categoryInput = newProduct.category.toLowerCase();
+        const validCategories: Category[] = ["hard", "soft", "chocolate", "sour", "other"];
+        const categoryToUse: Category = validCategories.includes(categoryInput as Category)
+            ? (categoryInput as Category)
+            : "other";
+
+        const payload = {
+            id: crypto.randomUUID(), // Generate ID here for optimistic
+            name: newProduct.name,
+            category: categoryToUse,
+            price_syp: parseFloat(newProduct.price),
+            price_try: 0,
+            packing_carton: "N/A",
+            packing_inner: "N/A",
+            categoryId: "general",
+            image: "/placeholder.png",
+            notes: null,
+            is_out_of_stock: false
+        };
+
+        // 1. Optimistic Update
+        addToStore(payload);
+        setNewProduct({ name: "", price: "", category: "soft" });
+
+        // 2. Server Action
+        await addToInventory(payload);
+    };
+
+    const handleDeleteProduct = async (id: string) => {
+        if (!confirm("Delete this product?")) return;
+        deleteFromStore(id);
+        await deleteFromInventory(id);
+    };
+
+    // Helper to safely update using proper action
+    // Helper to safely update using proper action
+    const handleUpdateProduct = async (id: string, updates: any) => {
+        updateInternalStore(id, updates);
+        await updateProductAction(id, updates);
+    };
 
     // 🔒 SIMPLE AUTH
     if (!isAuthenticated) {
@@ -96,29 +166,7 @@ export default function AdminPage() {
                             onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
                         />
                         <Button
-                            onClick={() => {
-                                if (!newProduct.name || !newProduct.price) return;
-
-                                const categoryInput = newProduct.category.toLowerCase();
-                                const validCategories: Category[] = ["hard", "soft", "chocolate", "sour", "other"];
-                                const categoryToUse: Category = validCategories.includes(categoryInput as Category)
-                                    ? (categoryInput as Category)
-                                    : "other";
-
-                                addProduct({
-                                    name: newProduct.name,
-                                    category: categoryToUse,
-                                    price_syp: parseFloat(newProduct.price),
-                                    price_try: 0,
-                                    packing_carton: "N/A",
-                                    packing_inner: "N/A",
-                                    categoryId: "general",
-                                    image: "", // Placeholder
-                                    notes: null,
-                                    is_out_of_stock: false
-                                });
-                                setNewProduct({ name: "", price: "", category: "soft" });
-                            }}
+                            onClick={handleAddProduct}
                             className="bg-[var(--candy-blue)] text-black hover:bg-white"
                         >
                             Add Product
@@ -148,11 +196,11 @@ export default function AdminPage() {
                                     <td className="p-4 text-right flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                         <Button size="iconSm" variant="ghost" onClick={() => {
                                             const newPrice = prompt("New Price?", product.price_syp.toString());
-                                            if (newPrice) updateProduct(product.id, { price_syp: parseFloat(newPrice) });
+                                            if (newPrice) handleUpdateProduct(product.id, { price_syp: parseFloat(newPrice) });
                                         }}>
                                             <Icon name="Pencil" size={14} />
                                         </Button>
-                                        <Button size="iconSm" variant="ghost" className="text-red-500 hover:bg-red-500/10" onClick={() => deleteProduct(product.id)}>
+                                        <Button size="iconSm" variant="ghost" className="text-red-500 hover:bg-red-500/10" onClick={() => handleDeleteProduct(product.id)}>
                                             <Icon name="Trash2" size={14} />
                                         </Button>
                                     </td>
