@@ -58,6 +58,9 @@ export async function createProduct(
 
     const newProduct: NewProduct = {
       ...validated.data,
+      id: crypto.randomUUID(),
+      categoryId: "general", // Required by schema
+      image: validated.data.image || "/placeholder.png", // Fallback for notNull
       is_out_of_stock: false,
     };
 
