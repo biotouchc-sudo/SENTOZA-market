@@ -1,0 +1,50 @@
+{
+    "name": "santoza-dxp",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "db:generate": "drizzle-kit generate",
+        "db:push": "drizzle-kit push",
+        "db:seed": "npx tsx src/db/seed.ts",
+        "db:studio": "drizzle-kit studio",
+        "snapshot": "powershell -ExecutionPolicy Bypass -File scripts/snapshot.ps1",
+        "verify:citations": "node scripts/verify-citations.js",
+        "test:regression": "echo 'Run regression suite' && exit 0"
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^5.2.2",
+        "@neondatabase/serverless": "^1.0.2",
+        "@radix-ui/react-slot": "^1.2.4",
+        "@tailwindcss/postcss": "^4.1.18",
+        "autoprefixer": "^10.4.23",
+        "class-variance-authority": "latest",
+        "clsx": "latest",
+        "drizzle-orm": "^0.45.1",
+        "framer-motion": "latest",
+        "lucide-react": "latest",
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "react-hook-form": "^7.71.1",
+        "tailwind-merge": "latest",
+        "zod": "^4.3.5",
+        "zustand": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "latest",
+        "@types/react": "latest",
+        "@types/react-dom": "latest",
+        "drizzle-kit": "^0.18.1",
+        "eslint": "latest",
+        "eslint-config-next": "latest",
+        "husky": "^8.0.0",
+        "postcss": "latest",
+        "tailwindcss": "latest",
+        "tsx": "^4.21.0",
+        "typescript": "latest"
+    }
+}

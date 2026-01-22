@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Animation DSL",
+    "description": "Declarative description of a UI animation timeline",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "trigger": {
+            "enum": [
+                "mount",
+                "hover",
+                "click",
+                "scroll",
+                "view"
+            ]
+        },
+        "timeline": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "target": {
+                        "type": "string",
+                        "description": "Selector or Ref ID"
+                    },
+                    "from": {
+                        "type": "object"
+                    },
+                    "to": {
+                        "type": "object"
+                    },
+                    "duration": {
+                        "enum": [
+                            "t-fast",
+                            "t-normal",
+                            "t-slow"
+                        ]
+                    },
+                    "ease": {
+                        "enum": [
+                            "standard",
+                            "spring-bouncy"
+                        ]
+                    },
+                    "delay": {
+                        "type": "number",
+                        "description": "ms"
+                    },
+                    "staggerChildren": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "target",
+                    "to"
+                ]
+            }
+        }
+    }
+}

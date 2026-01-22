@@ -1,0 +1,61 @@
+# 🚀 الخيار B: مشروع جديد من الصفر
+
+## الخطوة 0: نسخ القالب الأم (5 دقائق)
+```powershell
+Copy-Item -Path "giathsalon-wep" -Destination "new-project-name" -Recurse
+cd new-project-name
+```
+
+---
+
+## خريطة التنفيذ (4 Beats)
+
+### 🎯 Gate 0: بطاقة المشروع (قبل أي شيء)
+أعطني هذه المعلومات:
+- **الاسم:** [؟]
+- **النوع:** [حلاق / متجر / منصة / مدونة]
+- **البلد:** [؟]
+- **الميزة التنافسية:** [؟]
+
+---
+
+### 🦴 Beat 1: الهيكل (Blueprint) - يوم 1
+- [ ] تحديث [project.context.md](file:///c:/Users/acer/Downloads/play%20books/giathsalon-wep/project.context.md)
+- [ ] تحديث [brand.voice.md](file:///c:/Users/acer/Downloads/play%20books/giathsalon-wep/.ai/brand.voice.md)
+- [ ] اختيار Production Mode (A/B/C)
+- [ ] اختيار Style Pack (من 20)
+- [ ] اختيار Quality Tier (Royal/Premium/Essential)
+- [ ] اختيار 3 ميزات خرافية (من الكتالوج)
+- [ ] رسم هيكل الصفحات
+
+### 🧠 Beat 2: المنطق (Logic) - يوم 2-3
+- [ ] تعريف Schema البيانات
+- [ ] ربط APIs المطلوبة
+- [ ] إعداد CMS (إن وجد)
+- [ ] إعداد Analytics Events
+
+### 🎨 Beat 3: الجلد (Skin) - يوم 4-5
+- [ ] تطبيق Design Tokens
+- [ ] بناء Components الأساسية
+- [ ] تصميم كل صفحة
+- [ ] التأكد من Responsive
+
+### ✨ Beat 4: السحر (Magic) - يوم 6-7
+- [ ] تفعيل الميزات الخرافية المختارة
+- [ ] تفعيل Motion (Anime.js)
+- [ ] اختبار الأداء
+- [ ] اختبار Accessibility
+
+---
+
+## Gates النهائية
+- [ ] Gate 1 (Intent) ✓
+- [ ] Gate 2 (Brand) ✓
+- [ ] Gate 3 (Data) ✓
+- [ ] Gate 4 (Performance) ✓
+- [ ] Gate 5 (Measurement) ✓
+
+## التسليم
+- [ ] Deployment Checklist ✓
+- [ ] Client Handoff ✓
+- [ ] Legal (Privacy/Terms) ✓

@@ -1,0 +1,57 @@
+[
+    {
+        "id": "k1",
+        "name": "كراميلا توفينا سيغار فواكه",
+        "category": "كراميلا",
+        "price_syp": 250,
+        "price_try": 1,
+        "packing_carton": "6 كيس",
+        "packing_inner": "كيس 1 كيلو (180 قطعة تقريبا)",
+        "image": "/images/carmelsut.jpeg",
+        "notes": ""
+    },
+    {
+        "id": "k2",
+        "name": "كراميلا توفينا دارك سيغار",
+        "category": "كراميلا",
+        "price_syp": 250,
+        "price_try": 1,
+        "packing_carton": "6 كيس",
+        "packing_inner": "1 كيلو (180 قطعة تقريبا)",
+        "image": "/images/dark.jpeg",
+        "notes": ""
+    },
+    {
+        "id": "k3",
+        "name": "كراميلا توفينا بلاك",
+        "category": "كراميلا",
+        "price_syp": 250,
+        "price_try": 1,
+        "packing_carton": "6 كيس (180 قطعة تقريبا)",
+        "packing_inner": "كيس 1 كيلو",
+        "image": "/images/black.jpeg",
+        "notes": "نكهة الشوكولا"
+    },
+    {
+        "id": "k4",
+        "name": "كراميلا توفينا ايس كريم",
+        "category": "كراميلا",
+        "price_syp": 250,
+        "price_try": 1,
+        "packing_carton": "6 كيس",
+        "packing_inner": "كيس 1 كيلو (180 قطعة تقريبا)",
+        "image": "/images/icecrem.jpeg",
+        "notes": ""
+    },
+    {
+        "id": "k5",
+        "name": "كراميلا توفينا بلاك علب 100 حبة",
+        "category": "بسكويت",
+        "price_syp": 250,
+        "price_try": 1,
+        "packing_carton": "12 علبة",
+        "packing_inner": "100 قطعة",
+        "image": "/images/black-box.jpeg",
+        "notes": ""
+    }
+]

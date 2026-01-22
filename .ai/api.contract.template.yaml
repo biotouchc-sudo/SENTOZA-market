@@ -1,0 +1,89 @@
+openapi: 3.1.0
+info:
+  title: {{PROJECT_NAME}} API Contract (Source of Truth)
+  version: 1.0.0
+  description: >
+    This is the SINGLE SOURCE OF TRUTH for all data schemas.
+    Frontend must strictly adhere to these types.
+    Backend must strictly implement these schemas.
+    NO DATA HALLUCINATIONS ALLOWED.
+
+servers:
+  - url: https://api.production.com/v1
+    description: Production Server
+  - url: http://localhost:3000/api
+    description: Local Dev
+
+components:
+  schemas:
+    # -----------------------------------------------------
+    # 🧱 Core Primitives (Don't reinvent)
+    # -----------------------------------------------------
+    ID:
+      type: string
+      format: uuid
+      example: "123e4567-e89b-12d3-a456-426614174000"
+    
+    Timestamp:
+      type: string
+      format: date-time
+      example: "2026-01-21T10:00:00Z"
+
+    Money:
+      type: object
+      required: [amount, currency]
+      properties:
+        amount:
+          type: integer
+          description: Amount in smallest unit (e.g., cents)
+        currency:
+          type: string
+          enum: [USD, EUR, SAR, AED]
+
+    # -----------------------------------------------------
+    # 📦 Domain Entities (Example)
+    # -----------------------------------------------------
+    User:
+      type: object
+      required: [id, email, role]
+      properties:
+        id:
+          $ref: '#/components/schemas/ID'
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum: [guest, user, admin]
+        preferences:
+          type: object
+          properties:
+            theme:
+              type: string
+              enum: [light, dark, system]
+
+    # -----------------------------------------------------
+    # 🚨 Error Standard (Strict)
+    # -----------------------------------------------------
+    ErrorResponse:
+      type: object
+      required: [code, message, traceId]
+      properties:
+        code:
+          type: string
+          example: "AUTH_001"
+        message:
+          type: string
+          example: "Invalid credentials"
+        traceId:
+          type: string
+          description: For observability
+
+paths:
+  # Define endpoints here...
+  /health:
+    get:
+      summary: System Health Check
+      responses:
+        '200':
+          description: OK

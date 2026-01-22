@@ -1,0 +1,43 @@
+{
+    "meta": {
+        "version": "1.0",
+        "description": "0.01% Performance Contract Enforcement"
+    },
+    "budgets": {
+        "global": {
+            "js_bundle_gzip": "150kb",
+            "css_bundle_gzip": "20kb",
+            "font_count": 2
+        },
+        "components": {
+            "HeroSection": {
+                "max_render_ms": 16,
+                "max_js_kb": 5,
+                "lcp_priority": true
+            },
+            "NavBar": {
+                "max_js_kb": 10,
+                "layout_shift_allowed": false
+            },
+            "BookingForm": {
+                "max_js_kb": 35,
+                "interactive_delay_ms": 100
+            },
+            "ServiceCard": {
+                "max_js_kb": 2,
+                "memoized": true
+            },
+            "Footer": {
+                "lazy_load": true
+            }
+        }
+    },
+    "rules": {
+        "force_server_components_default": true,
+        "block_heavy_libs": [
+            "moment",
+            "lodash-full",
+            "three-js-unoptimized"
+        ]
+    }
+}

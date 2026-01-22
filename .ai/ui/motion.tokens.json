@@ -1,0 +1,41 @@
+{
+    "meta": {
+        "version": "1.0",
+        "description": "0.01% Motion System Tokens. NO MAGIC NUMBERS ALLOWED."
+    },
+    "timing": {
+        "t-instant": 0,
+        "t-micro": 80,
+        "t-fast": 120,
+        "t-normal": 160,
+        "t-slow": 320,
+        "t-long": 600,
+        "t-profile": 800
+    },
+    "easing": {
+        "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "decelerate": "cubic-bezier(0.0, 0.0, 0.2, 1)",
+        "accelerate": "cubic-bezier(0.4, 0.0, 1, 1)",
+        "sharp": "cubic-bezier(0.4, 0.0, 0.6, 1)",
+        "spring-stiff": "spring(stiffness: 300, damping: 30)",
+        "spring-bouncy": "spring(stiffness: 200, damping: 15)"
+    },
+    "scale": {
+        "none": 1,
+        "subtle": 0.98,
+        "standard": 0.95,
+        "expressive": 0.90,
+        "expand": 1.05
+    },
+    "priority": {
+        "micro": 1,
+        "feedback": 2,
+        "content": 3,
+        "structure": 4
+    },
+    "reducedMotion": {
+        "prefersReduced": true,
+        "reduceTo": "fade-only",
+        "disableSprings": true
+    }
+}

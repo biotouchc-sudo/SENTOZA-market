@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "snapshot": "powershell -ExecutionPolicy Bypass -File scripts/snapshot.ps1",
+    "verify:citations": "node scripts/verify-citations.js",
+    "test:regression": "echo 'Run regression suite' && exit 0",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
+}

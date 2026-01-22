@@ -1,0 +1,97 @@
+{
+    "version": "1.0",
+    "events": {
+        "page_view": {
+            "description": "User views a page",
+            "properties": {
+                "page_path": "string",
+                "page_title": "string",
+                "referrer": "string?"
+            }
+        },
+        "cta_click": {
+            "description": "User clicks a call-to-action",
+            "properties": {
+                "cta_id": "string",
+                "cta_text": "string",
+                "cta_location": "string"
+            }
+        },
+        "form_start": {
+            "description": "User starts filling a form",
+            "properties": {
+                "form_id": "string",
+                "form_name": "string"
+            }
+        },
+        "form_submit": {
+            "description": "User submits a form",
+            "properties": {
+                "form_id": "string",
+                "form_name": "string",
+                "success": "boolean"
+            }
+        },
+        "signup_start": {
+            "description": "User begins signup process",
+            "properties": {
+                "method": "string"
+            }
+        },
+        "signup_complete": {
+            "description": "User completes signup",
+            "properties": {
+                "method": "string",
+                "user_id": "string"
+            }
+        },
+        "purchase_start": {
+            "description": "User begins checkout",
+            "properties": {
+                "cart_value": "number",
+                "item_count": "number"
+            }
+        },
+        "purchase_complete": {
+            "description": "User completes purchase",
+            "properties": {
+                "order_id": "string",
+                "total": "number",
+                "currency": "string"
+            }
+        },
+        "error_occurred": {
+            "description": "An error happened",
+            "properties": {
+                "error_code": "string",
+                "error_message": "string",
+                "page_path": "string"
+            }
+        },
+        "search_performed": {
+            "description": "User performs a search",
+            "properties": {
+                "query": "string",
+                "results_count": "number"
+            }
+        }
+    },
+    "funnels": {
+        "signup": [
+            "page_view",
+            "signup_start",
+            "signup_complete"
+        ],
+        "purchase": [
+            "page_view",
+            "cta_click",
+            "purchase_start",
+            "purchase_complete"
+        ],
+        "contact": [
+            "page_view",
+            "form_start",
+            "form_submit"
+        ]
+    }
+}

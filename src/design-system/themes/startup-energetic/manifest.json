@@ -1,0 +1,41 @@
+{
+    "name": "Startup Energetic",
+    "description": "Vibrant, modern, action-oriented. Perfect for SaaS.",
+    "performance": {
+        "rating": "Good",
+        "max_js_kb": 150,
+        "max_lcp_ms": 1200
+    },
+    "tokens_override": {
+        "color": {
+            "primary": "#6366F1",
+            "primary-hover": "#4F46E5",
+            "secondary": "#EC4899"
+        },
+        "motion": {
+            "level": "medium",
+            "duration-medium": "240ms"
+        },
+        "typography": {
+            "font-family": "Outfit, system-ui, sans-serif"
+        }
+    },
+    "permitted_animations": [
+        "fade",
+        "slide-up",
+        "button-hover",
+        "card-hover-lift",
+        "hero-parallax"
+    ],
+    "recommended_assets": {
+        "images": "WebP, < 300KB",
+        "icons": "Phosphor",
+        "logo": "SVG with draw animation"
+    },
+    "use_cases": [
+        "SaaS landing pages",
+        "Product launches",
+        "Startup websites",
+        "Tech companies"
+    ]
+}

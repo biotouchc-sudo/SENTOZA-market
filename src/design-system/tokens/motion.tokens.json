@@ -1,0 +1,26 @@
+{
+    "springs": {
+        "bouncy": {
+            "stiffness": 300,
+            "damping": 15
+        },
+        "snappy": {
+            "stiffness": 400,
+            "damping": 25
+        },
+        "smooth": {
+            "stiffness": 100,
+            "damping": 20
+        }
+    },
+    "durations": {
+        "fast": 0.2,
+        "normal": 0.3,
+        "slow": 0.5
+    },
+    "scales": {
+        "hover": 1.02,
+        "tap": 0.98,
+        "focus": 1.05
+    }
+}

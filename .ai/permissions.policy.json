@@ -1,0 +1,25 @@
+{
+    "version": "1.0",
+    "allowed_commands": [
+        "npm run build",
+        "npm test",
+        "npx tsc --noEmit",
+        "git status",
+        "git commit -m"
+    ],
+    "dangerous_commands_requires_human": [
+        "rm -rf",
+        "git push --force",
+        "docker rm -f",
+        "kubectl delete"
+    ],
+    "max_write_paths": [
+        "src/",
+        "public/"
+    ],
+    "blocked_paths": [
+        "/etc/",
+        "C:\\Windows\\",
+        ".env"
+    ]
+}

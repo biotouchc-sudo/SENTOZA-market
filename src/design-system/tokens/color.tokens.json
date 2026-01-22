@@ -1,0 +1,21 @@
+{
+    "brand": {
+        "primary": "#D91C24",
+        "secondary": "#FFC107",
+        "accent": "#4A148C",
+        "background": "#F8F9FA",
+        "surface": "#FFFFFF",
+        "text": {
+            "primary": "#1A1A1A",
+            "secondary": "#666666",
+            "muted": "#999999"
+        },
+        "border": "#E5E5E5"
+    },
+    "semantic": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "info": "#3B82F6"
+    }
+}

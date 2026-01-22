@@ -1,0 +1,47 @@
+{
+    "meta": {
+        "project": "{{PROJECT_NAME}}",
+        "languages": [
+            "en",
+            "ar"
+        ],
+        "version": "1.0.0"
+    },
+    "modules": {
+        "common": {
+            "buttons": {
+                "submit": {
+                    "en": "Submit",
+                    "ar": "إرسال",
+                    "note": "Used in primary forms"
+                },
+                "cancel": {
+                    "en": "Cancel",
+                    "ar": "إلغاء",
+                    "note": "Secondary action"
+                }
+            },
+            "errors": {
+                "generic": {
+                    "en": "Something went wrong",
+                    "ar": "حدث خطأ ما",
+                    "note": "Fallback error message"
+                }
+            }
+        },
+        "auth": {
+            "login_title": {
+                "en": "Welcome Back",
+                "ar": "مرحباً بعودتك",
+                "note": "H1 on login page"
+            }
+        },
+        "marketing": {
+            "hero_title": {
+                "en": "{{MARKETING_CLAIM_1}}",
+                "ar": "{{MARKETING_CLAIM_1_AR}}",
+                "note": "Must pass Claims Checklist"
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Corporate Clean",
+    "description": "Professional, calm, trust-focused. Perfect for B2B.",
+    "performance": {
+        "rating": "Excellent",
+        "max_js_kb": 100,
+        "max_lcp_ms": 1000
+    },
+    "tokens_override": {
+        "color": {
+            "primary": "#1E3A5F",
+            "primary-hover": "#15294A"
+        },
+        "motion": {
+            "level": "minimal",
+            "duration-medium": "200ms"
+        },
+        "typography": {
+            "font-family": "Inter, system-ui, sans-serif"
+        }
+    },
+    "permitted_animations": [
+        "fade",
+        "button-hover"
+    ],
+    "recommended_assets": {
+        "images": "WebP, < 200KB",
+        "icons": "Lucide",
+        "logo": "SVG, no animation"
+    },
+    "use_cases": [
+        "Corporate websites",
+        "B2B SaaS",
+        "Financial services",
+        "Law firms"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "budgets": {
+        "landing_page": {
+            "js_kb": 150,
+            "image_kb": 500,
+            "font_kb": 50,
+            "lcp_ms": 1200
+        },
+        "app_dashboard": {
+            "js_kb": 350,
+            "image_kb": 100,
+            "font_kb": 30,
+            "lcp_ms": 2000
+        },
+        "blog_post": {
+            "js_kb": 50,
+            "image_kb": 300,
+            "font_kb": 30,
+            "lcp_ms": 800
+        }
+    },
+    "enforcement": "strict",
+    "action_on_fail": "error"
+}

@@ -1,0 +1,193 @@
+# 🗺️ EXECUTION MAP: The Zero-Hallucination Protocol (2026)
+
+> **Philosophy**: "Biological Integrity." We build an organism, not just an app.
+> **Source of Truth**: [CONSTITUTION-2026.md](file:///c:/%D8%AC%D9%85%D9%8A%D8%B9%20%D9%83%D9%84%D8%B4%D9%8A/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B6%D8%A8%D8%B7%20%D8%A7%D9%8A%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9/CONSTITUTION-2026.md), [SENATE_RULES.md](file:///c:/%D8%AC%D9%85%D9%8A%D8%B9%20%D9%83%D9%84%D8%B4%D9%8A/butcher/SENATE_RULES.md), `WhatsApp Bio-Architect`.
+> **Goal**: 0% Error, 100% "Category Definer" Quality.
+
+---
+
+## 🛑 Rules of Engagement (The Senate)
+Before running ANY prompt, you must acknowledge:
+1.  **Mobile First**: All UI must be designed for "Thumb Interaction" (Bottom Sheets vs Modals).
+2.  **Speed**: LCP < 2.5s. No тяжелый libraries.
+3.  **Strict Types**: `noImplicitAny` is ON. Zod is mandatory for all inputs.
+
+---
+
+## 🧬 Phase 1: The Genesis (Structure & DNA)
+**Goal**: Create the project skeleton and database connection.
+
+### 📜 Prompt 1.1: Project Setup & Environment
+```text
+Act as a Senior Systems Architect (2026 Standard).
+**Reference**: `CONSTITUTION-2026.md` (Infrastructure).
+
+**Task**: Initialize the "Bio-Commerce" project.
+1.  **Stack**: Next.js 15 (App Router), React 19, Tailwind CSS v4, Lucide React.
+2.  **Structure Rules**:
+    - Use `src/` directory.
+    - Implement "Group Routes": `(shop)` for public, `(dashboard)` for admin.
+    - Create `src/lib/constants.ts` for global config (Store Name, Currency, WhatsApp No).
+    - Create `src/types/index.ts` for shared interfaces.
+3.  **Configuration**:
+    - `next.config.ts`: Enable `serverActions` (if needed for v15).
+    - `tailwind.config.ts`: Define the "Royal Butcher" palette (or your specific brand colors).
+
+**Output**: Provide the terminal commands to create the app and the exact code for `constants.ts`, `types/index.ts`, and the folder structure creation commands.
+**Constraint**: Do NOT create any UI components yet. Focus on the skeleton.
+```
+
+### 📜 Prompt 1.2: The Brain (Neon + Drizzle)
+```text
+Act as a Database Engineer.
+**Reference**: `SENATE_RULES.md` (Law of No Shared State - Data Integrity).
+
+**Task**: Set up the "Memory" of the organism.
+1.  **Tools**: Drizzle ORM, Drizzle Kit, Neon Serverless Driver (`@neondatabase/serverless`).
+2.  **Schema (`src/db/schema.ts`)**:
+    - Table: `products`
+      - `id`: uuid (primary key, defaultRandom)
+      - `name`: text (not null)
+      - `slug`: text (unique, not null)
+      - `price`: integer (store in cents/halalas to avoid float errors, or decimal) -> Use `decimal(10, 2)` for simplicity if supported, or `integer`. Let's strictly use `integer` (cents).
+      - `description`: text
+      - `image_url`: text
+      - `category`: text (enum-like)
+      - `is_available`: boolean (default true)
+      - `created_at`: timestamp (defaultNow)
+    - Table: `categories` (Optional, or just use Enum in code for V1. Let's keep it simple: Enum in code).
+3.  **Connection (`src/db/index.ts`)**:
+    - Export the `db` instance using `process.env.DATABASE_URL`.
+4.  **Seeding (`src/db/seed.ts`)**:
+    - Create a script to insert 5 dummy products (Burger, Fries, Coke, etc.).
+
+**Output**: The `schema.ts`, `index.ts`, `seed.ts` files, and the `.env.local` template.
+```
+
+---
+
+## 🧠 Phase 2: The Nervous System (Logic & Control)
+**Goal**: Enable the "Admin Mind" to control the "Body".
+
+### 📜 Prompt 2.1: Server Actions (The Blood Flow)
+```text
+Act as a Backend Logic Expert.
+**Reference**: `CONSTITUTION-2026.md` (Server Actions & Mutation).
+
+**Task**: Create the "Nervous System" (CRUD Operations).
+1.  **File**: `src/lib/actions/products.ts`.
+2.  **Requirements**:
+    - Use `zod` for input validation.
+    - **Actions**:
+      - `createProduct(state, formData)`: Handle image upload (conceptual/mock for now) + DB Insert.
+      - `updateProduct`: Update fields.
+      - `deleteProduct`: Remove from DB.
+      - `toggleAvailability`: Quick switch.
+    - **Revalidation**: ALWAYS call `revalidatePath` after mutation.
+3.  **Error Handling**: Return `{ success: boolean, message: string }`.
+
+**Output**: The complete, type-safe `products.ts` action file.
+```
+
+### 📜 Prompt 2.2: The Admin Dashboard (The Mind)
+```text
+Act as a UI/UX Specialist (Dashboard Focus).
+**Reference**: `SENATE_RULES.md` (Law of Observability).
+
+**Task**: Build the `(dashboard)` interface.
+1.  **Layout**: `src/app/(dashboard)/layout.tsx` - Simple Sidebar + Header.
+2.  **Page**: `src/app/(dashboard)/admin/products/page.tsx`.
+    - Use a **Data Table** component (Shadcn-like).
+    - Columns: Image, Name, Price, Status, Actions (Edit/Delete).
+    - Header: "Products" title + "Add New" button.
+3.  **Component**: `ProductForm.tsx` (Client Component).
+    - Uses `react-hook-form` + `zod`.
+    - Calls the Server Action `createProduct` / `updateProduct`.
+    - Show `toast` on success.
+
+**Output**: The Dashboard Page, Layout, and ProductForm component code.
+```
+
+---
+
+## 👤 Phase 3: The Body (Storefront)
+**Goal**: The "Zero-Friction" Customer Interface.
+
+### 📜 Prompt 3.1: The Storefront (The Face)
+```text
+Act as a Frontend Artist (2026 Standards).
+**Reference**: `SENATE_RULES.md` (Law of Thumb-First, Law of Lossless Quality).
+
+**Task**: Build the Customer View `(shop)`.
+1.  **Page**: `src/app/(shop)/menu/page.tsx`.
+2.  **Data Fetching**: Async Server Component fetching `db.select().from(products)`.
+3.  **UI Components**:
+    - `CategoryFilter`: Horizontal scrollable pills (All, Burgers, Drinks).
+    - `ProductGrid`: Warning: Mobile = 1 column, Tablet = 2, Desktop = 3.
+    - `ProductCard`:
+      - Image (Aspect Ratio 1:1 or 4:3).
+      - Title (Truncated 2 lines).
+      - Price (Formatted).
+      - **Add Button**: Large touch target (44px min).
+    - **Animations**: Use `framer-motion` for "Layout Id" transitions when filtering.
+
+**Output**: The Menu Page, CategoryFilter, and ProductCard components.
+```
+
+### 📜 Prompt 3.2: The Heart (Cart & WhatsApp)
+```text
+Act as a Conversion Optimization Expert.
+**Reference**: `SENATE_RULES.md` (Law of Zero Friction).
+
+**Task**: Implement the "No-Checkout" Logic.
+1.  **State**: `src/lib/store/use-cart.ts` (Zustand).
+    - Persist to localStorage.
+    - Selectors: `totalPrice`, `totalItems`.
+2.  **UI**: `CartFloatingBar.tsx`.
+    - Fixed bottom (Mobile).
+    - Shows "3 Items | $45.00".
+    - Button: "Complete Order".
+3.  **Logic**: `src/lib/utils/whatsapp.ts`.
+    - Function: `generateOrderString(cart)`.
+    - Format:
+      "👋 Order for [Store Name]
+       ----------------
+       2x 🍔 Cheese Burger ($20)
+       1x 🥤 Coke ($2)
+       ----------------
+       Total: $22
+       Note: [User Note]"
+    - Returns: `https://wa.me/[Phone]?text=[EncodedString]`.
+4.  **Integration**: Clicking "Complete Order" -> Opens WhatsApp -> Clears Cart (after delay).
+
+**Output**: The Cart Store, WhatsApp Utility, and Floating Bar component.
+```
+
+---
+
+## 🏁 Phase 4: Final Polish (The Soul)
+**Goal**: Ensure it feels professional, not cheap.
+
+### 📜 Prompt 4.1: The Polish
+```text
+Act as a Quality Assurance Lead.
+**Reference**: `QUALITY_GATES.md`.
+
+**Task**: Final Polish.
+1.  **Metadata**: Add dynamic `generateMetadata` for SEO (Title, Description, OpenGraph).
+2.  **Loading States**: Add `loading.tsx` with Skeleton screens for the menu.
+3.  **Error Handling**: Add `error.tsx` for graceful failure.
+4.  **Font**: Ensure a premium font (e.g., 'Inter' or 'Outfit') is configured in `layout.tsx`.
+
+**Output**: The Metadata config, Loading/Error components, and Layout font setup.
+```
+
+---
+
+## 🛠️ How to Execute (Instruction Manual)
+1.  **Copy Prompt 1.1** -> Paste into Chat -> Implement Code.
+2.  **Verify**: Run `npm run dev`. Check page loads.
+3.  **Copy Prompt 1.2** -> Paste -> Implement DB.
+4.  ...and so on.
+
+**This map prevents you from getting lost. It forces adherence to the Constitution at every step.**

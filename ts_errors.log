@@ -1,0 +1,63 @@
+components/ui/button.tsx(4,22): error TS2307: Cannot find module '@radix-ui/react-slot' or its corresponding type declarations.
+drizzle.config.ts(1,10): error TS2305: Module '"drizzle-kit"' has no exported member 'defineConfig'.
+src/app/(dashboard)/admin/products/page.tsx(29,28): error TS2322: Type '{ id: string; name: string; category: "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; packing_inner: string; image: string | null; notes: string | null; is_out_of_stock: boolean; created_at: Date; }[]' is not assignable to type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }[]'.
+  Type '{ id: string; name: string; category: "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; packing_inner: string; image: string | null; notes: string | null; is_out_of_stock: boolean; created_at: Date; }' is not assignable to type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+    Types of property 'image' are incompatible.
+      Type 'string | null' is not assignable to type 'string'.
+        Type 'null' is not assignable to type 'string'.
+src/app/admin/page.tsx(78,31): error TS2322: Type '"PlusCircle"' is not assignable to type '"Table" | "Infinity" | "AArrowDown" | "AArrowUp" | "ALargeSmall" | "Accessibility" | "Activity" | "AirVent" | "Airplay" | "AlarmClock" | "AlarmClockCheck" | "AlarmClockMinus" | ... 1653 more ... | "ZoomOut"'.
+src/app/admin/page.tsx(143,51): error TS2322: Type '"Edit2"' is not assignable to type '"Table" | "Infinity" | "AArrowDown" | "AArrowUp" | "ALargeSmall" | "Accessibility" | "Activity" | "AirVent" | "Airplay" | "AlarmClock" | "AlarmClockCheck" | "AlarmClockMinus" | ... 1653 more ... | "ZoomOut"'.
+src/app/product/[id]/page.tsx(22,55): error TS2339: Property 'items' does not exist on type 'MarketState'.
+src/app/product/[id]/page.tsx(31,38): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/product/[id]/page.tsx(40,13): error TS2353: Object literal may only specify known properties, and 'price' does not exist in type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/app/product/[id]/page.tsx(40,28): error TS2339: Property 'price' does not exist on type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/app/product/[id]/page.tsx(106,42): error TS2339: Property 'price' does not exist on type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/app/product/[id]/page.tsx(111,34): error TS2339: Property 'description' does not exist on type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/app/product/[id]/page.tsx(113,42): error TS2339: Property 'description' does not exist on type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/app/product/[id]/page.tsx(191,57): error TS2339: Property 'price' does not exist on type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/components/admin/ProductForm.tsx(46,9): error TS2322: Type 'Resolver<{ name: string; price: unknown; category: string; image: string; description?: string | undefined; is_out_of_stock?: boolean | undefined; }, any, { name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }>' is not assignable to type 'Resolver<{ name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }, any, { name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }>'.
+  Types of parameters 'options' and 'options' are incompatible.
+    Type 'ResolverOptions<{ name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }>' is not assignable to type 'ResolverOptions<{ name: string; price: unknown; category: string; image: string; description?: string | undefined; is_out_of_stock?: boolean | undefined; }>'.
+      Type 'unknown' is not assignable to type 'number'.
+src/components/admin/ProductForm.tsx(50,38): error TS2339: Property 'description' does not exist on type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/components/admin/ProductForm.tsx(51,32): error TS2339: Property 'price' does not exist on type '{ id: string; name: string; category: "hard" | "soft" | "chocolate" | "sour" | "other" | "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+src/components/admin/ProductForm.tsx(74,38): error TS2554: Expected 2 arguments, but got 1.
+src/components/admin/ProductForm.tsx(79,37): error TS2339: Property 'error' does not exist on type 'ActionResponse'.
+src/components/admin/ProductForm.tsx(82,64): error TS2345: Argument of type '{ name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }' is not assignable to parameter of type 'FormData'.
+  Type '{ name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }' is missing the following properties from type 'FormData': append, delete, get, getAll, and 7 more.
+src/components/admin/ProductForm.tsx(87,37): error TS2339: Property 'error' does not exist on type 'ActionResponse'.
+src/components/admin/ProductForm.tsx(99,38): error TS2345: Argument of type '(data: ProductFormData) => Promise<void>' is not assignable to parameter of type 'SubmitHandler<TFieldValues>'.
+  Types of parameters 'data' and 'data' are incompatible.
+    Type 'TFieldValues' is not assignable to type '{ name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }'.
+      Type 'FieldValues' is missing the following properties from type '{ name: string; price: number; category: string; image: string; is_out_of_stock: boolean; description?: string | undefined; }': name, price, category, image, is_out_of_stock
+src/components/ui/button.tsx(4,22): error TS2307: Cannot find module '@radix-ui/react-slot' or its corresponding type declarations.
+src/components/ui/ProductCard.tsx(57,21): error TS2322: Type '{ y: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'Variant'.
+  Type '{ y: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'TargetAndTransition'.
+    Type '{ y: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+      Types of property 'transition' are incompatible.
+        Type '{ duration: number; ease: number[]; }' is not assignable to type 'Transition<any> | undefined'.
+          Type '{ duration: number; ease: number[]; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+            Type '{ duration: number; ease: number[]; }' is not assignable to type 'ValueAnimationTransition<any>'.
+              Types of property 'ease' are incompatible.
+                Type 'number[]' is not assignable to type 'Easing | Easing[] | undefined'.
+                  Type 'number[]' is not assignable to type 'EasingFunction | Easing[]'.
+                    Type 'number[]' is not assignable to type 'Easing[]'.
+                      Type 'number' is not assignable to type 'Easing'.
+src/components/ui/ProductCard.tsx(58,21): error TS2322: Type '{ scale: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'Variant'.
+  Type '{ scale: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'TargetAndTransition'.
+    Type '{ scale: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+      Types of property 'transition' are incompatible.
+        Type '{ duration: number; ease: number[]; }' is not assignable to type 'Transition<any> | undefined'.
+          Type '{ duration: number; ease: number[]; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+            Type '{ duration: number; ease: number[]; }' is not assignable to type 'ValueAnimationTransition<any>'.
+              Types of property 'ease' are incompatible.
+                Type 'number[]' is not assignable to type 'Easing | Easing[] | undefined'.
+                  Type 'number[]' is not assignable to type 'EasingFunction | Easing[]'.
+                    Type 'number[]' is not assignable to type 'Easing[]'.
+                      Type 'number' is not assignable to type 'Easing'.
+src/components/ui/ProductCard.tsx(161,29): error TS2322: Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'Transition<any> | undefined'.
+  Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+    Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'ValueAnimationTransition<any>'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type 'AnimationGeneratorType | undefined'.
+templates/api.template.ts(44,35): error TS2339: Property 'errors' does not exist on type 'ZodError<{ email: string; message: string; }>'.

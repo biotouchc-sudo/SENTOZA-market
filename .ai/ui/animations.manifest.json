@@ -1,0 +1,33 @@
+{
+    "meta": {
+        "project": "Giath Salon",
+        "version": "1.0"
+    },
+    "assets": [
+        {
+            "id": "hero-bg-flow",
+            "type": "lottie",
+            "src": "/assets/animations/hero-flow.json",
+            "size_kb": 25,
+            "priority": "high",
+            "fallback": "/assets/static/hero-poster.webp"
+        },
+        {
+            "id": "success-check",
+            "type": "svg",
+            "src": "/assets/icons/animated/check.svg",
+            "complexity": "low",
+            "interaction": "play-on-mount"
+        },
+        {
+            "id": "loader-spinner",
+            "type": "css",
+            "class": "spinner-3d",
+            "gpu_accelerated": true
+        }
+    ],
+    "policies": {
+        "lazy_load_threshold_kb": 50,
+        "mobile_disable_heavy_animations": true
+    }
+}

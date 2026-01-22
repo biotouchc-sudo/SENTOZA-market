@@ -1,0 +1,16 @@
+{
+    "kpis": {
+        "source_coverage": {
+            "description": "% claims with valid sources"
+        },
+        "build_pass_rate": {
+            "description": "% of builds passing on first run"
+        },
+        "regression_pass_rate": {
+            "description": "% regression scenarios passing"
+        },
+        "incident_rate": {
+            "description": "destructive incidents per 100 tasks"
+        }
+    }
+}

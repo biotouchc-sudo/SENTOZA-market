@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "meta": {
+        "version": "2026.1.0",
+        "tier": "0.01%_SENATE_STANDARD"
+    },
+    "project": {
+        "name": "{{PROJECT_NAME}}",
+        "id": "{{PROJECT_ID}}",
+        "quality_gate": "ROYAL"
+    },
+    "governance": {
+        "strict_mode": true,
+        "hallucination_check": "REQUIRED",
+        "gates": {
+            "gate_0_scope": true,
+            "gate_1_business": true,
+            "gate_2_design": true,
+            "gate_3_content": true,
+            "gate_4_implementation": true,
+            "gate_5_ops": true
+        }
+    },
+    "runtime_contracts": {
+        "performance": {
+            "lighthouse_min_score": 95,
+            "max_bundle_size_kb": 120,
+            "max_lcp_ms": 1200,
+            "max_inp_ms": 100
+        },
+        "visual": {
+            "regression_threshold": 0.001,
+            "tokens_enforced": true,
+            "hardcoded_values_forbidden": true
+        },
+        "accessibility": {
+            "standard": "WCAG2AA",
+            "zero_violations": true
+        },
+        "security": {
+            "zero_critical_cves": true,
+            "csp_enforced": true
+        }
+    },
+    "paths": {
+        "design_tokens": "./src/styles/tokens.ts",
+        "reference_ui": "./src/app/reference",
+        "api_contract": "./.ai/api.contract.yaml",
+        "content_dictionary": "./src/locales/dictionary.json"
+    }
+}

@@ -1,0 +1,5 @@
+DECISION AUTHORITY:
+- Architecture decisions are FINAL once approved.
+- AI may propose alternatives ONLY before approval.
+- After approval, AI executes, not redesigns.
+- If conflict occurs, rules > context > user message.

@@ -1,0 +1,61 @@
+drizzle.config.ts(1,10): error TS2305: Module '"drizzle-kit"' has no exported member 'defineConfig'.
+src/app/(dashboard)/admin/products/[id]/edit/page.tsx(5,29): error TS2307: Cannot find module '@/components/admin/ProductForm' or its corresponding type declarations.
+src/app/(dashboard)/admin/products/new/page.tsx(3,29): error TS2307: Cannot find module '@/components/admin/ProductForm' or its corresponding type declarations.
+src/app/(dashboard)/admin/products/page.tsx(29,28): error TS2322: Type '{ name: string; id: string; image: string | null; category: "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; packing_inner: string; notes: string | null; is_out_of_stock: boolean; created_at: Date; }[]' is not assignable to type '{ id: string; name: string; category: "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "hard" | "soft" | "chocolate" | "sour" | "other" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }[]'.
+  Type '{ name: string; id: string; image: string | null; category: "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; packing_inner: string; notes: string | null; is_out_of_stock: boolean; created_at: Date; }' is not assignable to type '{ id: string; name: string; category: "┘â╪▒╪º┘à┘è┘ä╪º" | "╪¿╪│┘â┘ê┘è╪¬" | "hard" | "soft" | "chocolate" | "sour" | "other" | "╪┤┘â┘ê┘ä╪º" | "┘à┘ê╪º╪» ┘à╪«╪¬┘ä┘ü╪⌐"; price_syp: number; price_try: number; packing_carton: string; ... 4 more ...; categoryId?: string | undefined; }'.
+    Types of property 'image' are incompatible.
+      Type 'string | null' is not assignable to type 'string'.
+        Type 'null' is not assignable to type 'string'.
+src/app/admin/page.tsx(4,33): error TS2305: Module '"@/store/useInventory"' has no exported member 'ProductDraft'.
+src/app/admin/page.tsx(8,10): error TS2305: Module '"@/lib/schema/product.schema"' has no exported member 'Category'.
+src/app/admin/page.tsx(79,31): error TS2322: Type '"PlusCircle"' is not assignable to type '"Lock" | "AArrowDown" | "AArrowUp" | "ALargeSmall" | "Accessibility" | "Activity" | "AirVent" | "Airplay" | "AlarmClock" | "AlarmClockCheck" | "AlarmClockMinus" | "AlarmClockOff" | ... 1653 more ... | "ZoomOut"'.
+src/app/admin/page.tsx(116,37): error TS2322: Type 'null' is not assignable to type 'string'.
+src/app/admin/page.tsx(153,51): error TS2322: Type '"Edit2"' is not assignable to type '"Lock" | "AArrowDown" | "AArrowUp" | "ALargeSmall" | "Accessibility" | "Activity" | "AirVent" | "Airplay" | "AlarmClock" | "AlarmClockCheck" | "AlarmClockMinus" | "AlarmClockOff" | ... 1653 more ... | "ZoomOut"'.
+src/components/features/ProductCard.tsx(37,13): error TS2322: Type '{ y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'VariantLabels | TargetAndTransition | undefined'.
+  Type '{ y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+    Type '{ y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+      Types of property 'transition' are incompatible.
+        Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+          Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+            Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+              Types of property 'ease' are incompatible.
+                Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+src/components/features/ProductCard.tsx(38,13): error TS2322: Type '{ scale: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'VariantLabels | TargetAndTransition | undefined'.
+  Type '{ scale: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+    Type '{ scale: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+      Types of property 'transition' are incompatible.
+        Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+          Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+            Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+              Types of property 'ease' are incompatible.
+                Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+src/components/ui/ProductCard.tsx(57,21): error TS2322: Type '{ y: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'Variant'.
+  Type '{ y: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'TargetAndTransition'.
+    Type '{ y: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+      Types of property 'transition' are incompatible.
+        Type '{ duration: number; ease: number[]; }' is not assignable to type 'Transition<any> | undefined'.
+          Type '{ duration: number; ease: number[]; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+            Type '{ duration: number; ease: number[]; }' is not assignable to type 'ValueAnimationTransition<any>'.
+              Types of property 'ease' are incompatible.
+                Type 'number[]' is not assignable to type 'Easing | Easing[] | undefined'.
+                  Type 'number[]' is not assignable to type 'EasingFunction | Easing[]'.
+                    Type 'number[]' is not assignable to type 'Easing[]'.
+                      Type 'number' is not assignable to type 'Easing'.
+src/components/ui/ProductCard.tsx(58,21): error TS2322: Type '{ scale: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'Variant'.
+  Type '{ scale: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type 'TargetAndTransition'.
+    Type '{ scale: number; transition: { duration: number; ease: number[]; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+      Types of property 'transition' are incompatible.
+        Type '{ duration: number; ease: number[]; }' is not assignable to type 'Transition<any> | undefined'.
+          Type '{ duration: number; ease: number[]; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+            Type '{ duration: number; ease: number[]; }' is not assignable to type 'ValueAnimationTransition<any>'.
+              Types of property 'ease' are incompatible.
+                Type 'number[]' is not assignable to type 'Easing | Easing[] | undefined'.
+                  Type 'number[]' is not assignable to type 'EasingFunction | Easing[]'.
+                    Type 'number[]' is not assignable to type 'Easing[]'.
+                      Type 'number' is not assignable to type 'Easing'.
+src/components/ui/ProductCard.tsx(161,29): error TS2322: Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'Transition<any> | undefined'.
+  Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+    Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'ValueAnimationTransition<any>'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type 'AnimationGeneratorType | undefined'.
+templates/api.template.ts(44,35): error TS2339: Property 'errors' does not exist on type 'ZodError<{ email: string; message: string; }>'.
