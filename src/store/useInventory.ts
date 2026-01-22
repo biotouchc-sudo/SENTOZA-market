@@ -123,7 +123,7 @@ export const useInventory = create<InventoryState>()(
     }),
     {
       name: "nexus-inventory-storage",
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => (typeof window !== "undefined" ? localStorage : undefined)),
     }
   )
 );

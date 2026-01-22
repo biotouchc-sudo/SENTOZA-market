@@ -26,8 +26,14 @@ export function SmartHeader() {
     const pathname = usePathname();
 
     const openCart = useMarketStore((state) => state.openCart);
+    const [mounted, setMounted] = useState(false);
     const cartItems = useMarketStore((state) => state.cart);
-    const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    // Ensure hydration match for cart count
+    const cartCount = mounted ? cartItems.reduce((sum, item) => sum + item.quantity, 0) : 0;
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     // Smart hide/show on scroll
     useEffect(() => {

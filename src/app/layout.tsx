@@ -64,12 +64,10 @@ export default function RootLayout({
 
                 <ParticleEffect />
 
-                <ClientShell>
-                    {/* ID for SkipLink target */}
-                    <div id="main-content">
-                        {children}
-                    </div>
-                </ClientShell>
+                {/* ID for SkipLink target */}
+                <div id="main-content">
+                    {children}
+                </div>
 
                 <CartSheet />
 
